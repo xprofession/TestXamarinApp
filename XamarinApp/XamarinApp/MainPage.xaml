@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinApp"
+             x:Class="XamarinApp.MainPage">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="Fill">
+            <StackLayout x:Name="Greed" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Label HorizontalOptions="Center" VerticalOptions="Start" Margin="5, 25, 5, 0" Text="Бланк" FontSize="Large" TextColor="Gray"/>
+                <Entry x:Name="entrName" HorizontalOptions="Fill" VerticalOptions="Start" Margin="5, 5, 5, 0" Placeholder="Имя" Unfocused="entrName_Unfocused" Completed="entrName_Completed"/>
+                <Entry x:Name="entrSurname" HorizontalOptions="Fill" VerticalOptions="Start" Margin="5, 0, 5, 0" Placeholder="Фамилия" Unfocused="entrSurname_Unfocused" Completed="entrSurname_Completed"/>
+                <Picker x:Name="pckCountry" Margin="5, 0, 5, 0" Title="Страна..." Unfocused="pckCountry_Unfocused"/>
+                <Entry x:Name="entrCity" HorizontalOptions="Fill" VerticalOptions="Start" Margin="5, 0, 5, 0" Placeholder="Город" Unfocused="entrCity_Unfocused" TextChanged="entrCity_TextChanged" Completed="entrCity_Completed"/>
+                <Entry x:Name="entrUniversity" HorizontalOptions="Fill" VerticalOptions="Start" Margin="5, 0, 5, 0" Placeholder="Университет" Focused="entrUniversity_Focused" Unfocused="entrUniversity_Unfocused" TextChanged="entrUniversity_TextChanged" Completed="entrUniversity_Completed"/>
+                <Button x:Name="btnSubmit" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, 30, 0, 0" Text="Подтвердить" Clicked="btnSubmit_Clicked"/>
+            </StackLayout>
+            <Grid x:Name="grdUniversities" Margin="0, 280, 0, 0" BackgroundColor="White" IsVisible="False" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="lstViewUniversities" ItemTapped="lstViewUniversities_ItemTapped"  ItemSelected="lstViewUniversities_ItemSelected"/>
+            </Grid>
+            <Grid x:Name="grdCities" Margin="0, 240, 0, 0" BackgroundColor="White" IsVisible="False" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="lstViewCities" ItemTapped="lstViewCities_ItemTapped" ItemSelected="lstViewCities_ItemSelected"/>
+            </Grid>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
